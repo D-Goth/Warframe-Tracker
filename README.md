@@ -3,6 +3,8 @@ FR - Français
 
 Un outil web monopage (Single Page Application) léger, autonome et sans dépendance serveur, conçu pour le suivi de progression dans Warframe.
 
+![Capture d'écran sur navigateur du Tracker Warframe](https://github.com/D-Goth/Warframe-Tracker/blob/main/Capture%20d'%C3%A9cran%202026-07-26%20183646.png?raw=true)
+
 ## 🛠️ Fonctionnalités
 
 - **Dashboard** : Vue synthétique des statistiques globales, répartition des éléments de Liches / Sœurs / Coda, rotations Incarnon et progression des Honorias.
