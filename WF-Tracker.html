@@ -5604,47 +5604,104 @@
 				{ id: "jd_60", nm: "Salle de Bal du Simulacre",     cost: 40  },
 			];
 			const EV_DD = [
-				{ id: "dd_0", nm: "Palette Plage", cost: 70 },
-				{ id: "dd_1", nm: "Ephemera Bataille d'eau", cost: 1 },
-				{ id: "dd_2", nm: "Ephemera Halieutique", cost: 700 },
-				{ id: "dd_3", nm: "Badge Bataille d'Eau", cost: 105 },
-				{ id: "dd_4", nm: "Bouclier Electromagnétique", cost: 140 },
-				{ id: "dd_5", nm: "Blitz Vulcain", cost: 140 },
-				{ id: "dd_6", nm: "Scie à Os", cost: 140 },
-				{ id: "dd_7", nm: "Frappe Dimensionnelle", cost: 140 },
-				{ id: "dd_8", nm: "Napalm Du Nightwatch", cost: 140 },
-				{ id: "dd_9", nm: "Viseur Harkonar", cost: 140 },
-				{ id: "dd_10", nm: "Poudre Fomorienne", cost: 140 },
-				{ id: "dd_11", nm: "Cartouches Acide", cost: 140 },
-				{ id: "dd_12", nm: "Rayon-Regen", cost: 140 },
-				{ id: "dd_13", nm: "Ballon Peluche - Sac A Dos", cost: 210 },
-				{ id: "dd_14", nm: "Ballon Peluche", cost: 280 },
-				{ id: "dd_15", nm: "Ballon Peluche - Lever de Soleil", cost: 350 },
-				{ id: "dd_16", nm: "Ballon Peluche - Carnaval", cost: 350 },
-				{ id: "dd_17", nm: "Ballon Peluche - Tropiques", cost: 350 },
-				{ id: "dd_18", nm: "Sceau Bataille d'Eau", cost: 420 },
-				{ id: "dd_19", nm: "Scène Bataille D'eau - Jour", cost: 700 },
-				{ id: "dd_20", nm: "Aspect de fusil Soaktron", cost: 490 },
-				{ id: "dd_21", nm: "Scène Bataille D'eau - Nuit", cost: 700 },
-				{ id: "dd_22", nm: "Glyphe Kavat Bataille d'Eau", cost: 250 },
-				{ id: "dd_23", nm: "Glyphe Kubrow Bataille d'Eau", cost: 250 },
-				{ id: "dd_24", nm: "Furax Wraith - Schéma", cost: 170 },
-				{ id: "dd_25", nm: "Furax Wraith - Gantelet Gauche", cost: 170 },
-				{ id: "dd_26", nm: "Furax Wraith - Gantelet Droit", cost: 170 },
-				{ id: "dd_27", nm: "Aspect Marteau Noodletron", cost: 200 },
-				{ id: "dd_28", nm: "Aspect Redeemer Abysso", cost: 200 },
-				{ id: "dd_29", nm: "Scène Du Relais d'Hydroid", cost: 200 },
-				{ id: "dd_30", nm: "Statuette Noggle - Hydoid Reprise", cost: 200 },
-				{ id: "dd_31", nm: "Statuette Noggle - Ember Reprise", cost: 500 },
-				{ id: "dd_32", nm: "Syandana Samia Towsun", cost: 450 },
-				{ id: "dd_33", nm: "Aspect Redeemer Pyrus", cost: 250 },
-				{ id: "dd_34", nm: "Sceau Brûlant", cost: 250 },
-				{ id: "dd_35", nm: "Sceau De Vague Fraîche", cost: 280 },
-				{ id: "dd_36", nm: "Peluche Kavat De Plage", cost: 280 },
-				{ id: "dd_37", nm: "Peluche Kavat Estival", cost: 280 },
-				{ id: "dd_38", nm: "Peluche Kubrow Sac a Dos", cost: 280 },
-				{ id: "dd_39", nm: "Peluche Kubrow de Carnaval", cost: 400 },
+			
+				//  PALETTES COULEURS
+				{ id: "dd_00", nm: "Palette Plage", cost: 50 },
+				{ id: "dd_01", nm: "Palette Marais", cost: 50 },
+				
+				//  MODS
+				{ id: "dd_02", nm: "Bouclier Electromagnétique", cost: 140 },
+				{ id: "dd_03", nm: "Blitz Vulcain", cost: 140 },
+				{ id: "dd_04", nm: "Scie à Os", cost: 140 },
+				{ id: "dd_05", nm: "Frappe Dimensionnelle", cost: 140 },
+				{ id: "dd_06", nm: "Napalm Du Nightwatch", cost: 140 },
+				{ id: "dd_07", nm: "Viseur Harkonar", cost: 140 },
+				{ id: "dd_08", nm: "Poudre Fomorienne", cost: 140 },
+				{ id: "dd_09", nm: "Cartouches Acide", cost: 140 },
+				{ id: "dd_10", nm: "Rayon-Regen", cost: 140 },
+				
+				//  BALLONS & PELUCHES
+				{ id: "dd_11", nm: "Ballon Peluche", cost: 230 },
+				{ id: "dd_12", nm: "Ballon Peluche - Sac A Dos", cost: 280 },
+				{ id: "dd_13", nm: "Ballon Peluche - Lever de Soleil", cost: 350 },
+				{ id: "dd_14", nm: "Ballon Peluche - Carnaval", cost: 350 },
+				{ id: "dd_15", nm: "Ballon Peluche - Tropiques", cost: 350 },
+				{ id: "dd_16", nm: "Peluche Kavat De Plage", cost: 195 },
+				{ id: "dd_17", nm: "Peluche Kavat Estival", cost: 195 },
+				{ id: "dd_18", nm: "Peluche Kubrow Sac a Dos", cost: 195 },
+				{ id: "dd_19", nm: "Peluche Kubrow de Carnaval", cost: 195 },
+				
+				//  ASPECTS (Skins : Armes & Objets)
+				{ id: "dd_20", nm: "Aspect de Bubonico de l'Aube", cost: 250 },
+				{ id: "dd_21", nm: "Aspect de fusil Soaktron", cost: 340 },
+				{ id: "dd_22", nm: "Aspect de Kompressa de l'Aube", cost: 250 },
+				{ id: "dd_23", nm: "Aspect Marteau Noodletron", cost: 280 },
+				{ id: "dd_24", nm: "Aspect Magistar de l'Aube", cost: 225 },
+				{ id: "dd_25", nm: "Aspect Redeemer Abysso", cost: 200 },
+				{ id: "dd_26", nm: "Aspect Redeemer Pyrus", cost: 225 },
+				{ id: "dd_27", nm: "Aspect Liset Athari", cost: 225 },
+				
+				//  SCENES								
+				{ id: "dd_30", nm: "Sceau Bataille d'Eau", cost: 420 },
+				{ id: "dd_31", nm: "Scène Bataille D'eau - Jour", cost: 490 },
+				{ id: "dd_32", nm: "Scène Bataille D'eau - Nuit", cost: 490 },
+				
+				//  BADGES / SCEAUX
+				{ id: "dd_33", nm: "Sceau Bataille d'Eau", cost: 175 },
+				{ id: "dd_34", nm: "Sceau Brûlant", cost: 175 }, 
+				{ id: "dd_35", nm: "Sceau De Vague Fraîche", cost: 175 },
+				{ id: "dd_36", nm: "Sceau Drahk Dropkick", cost: 175 },
+				{ id: "dd_37", nm: "Sceau Plouf", cost: 175 },
+				{ id: "dd_38", nm: "Badge Bataille d'Eau", cost: 105 },
+				{ id: "dd_39", nm: "Badge Coeur Aquatique", cost: 75 },
+				{ id: "dd_40", nm: "Badge Drakk Dropkick", cost: 75 },
+
+				//  POSTERS / AFFICHES
+				{ id: "dd_41", nm: "Poster Bataille d'Eau Still Chill", cost: 175 },
+				{ id: "dd_42", nm: "Affiche Surfer Sur La Vague", cost: 175 },
+				{ id: "dd_43", nm: "Affiche War Bataille d'Eau", cost: 175 },
+
+
+				//  GESTES / EPHEMERAS
+				{ id: "dd_44", nm: "Ephemera Bataille d'eau", cost: 1 },
+				{ id: "dd_45", nm: "Ephemera Halieutique", cost: 700 },
+				{ id: "dd_46", nm: "Geste Bataille d'Eau Ondes Aquatiques", cost: 250 },
+
+				//  GLYPHES
+				{ id: "dd_50", nm: "Glyphe Communautaire Grendel Bataille d’Eau", cost: 30 },
+				{ id: "dd_51", nm: "Glyphe Communautaire Hydroid Bataille d’Eau", cost: 30 },
+				{ id: "dd_52", nm: "Glyphe Communautaire Lavos Bataille d’Eau", cost: 30 },
+				{ id: "dd_53", nm: "Glyphe Communautaire Loki Bataille d’Eau", cost: 30 },
+				{ id: "dd_54", nm: "Glyphe Communautaire Nova Bataille d’Eau", cost: 30 },
+				{ id: "dd_55", nm: "Glyphe Communautaire Valkyr Bataille d’Eau", cost: 30 },
+				{ id: "dd_56", nm: "Glyphe Communautaire Voruna Bataille d’Eau", cost: 30 },
+				{ id: "dd_57", nm: "Glyphe Communautaire Yareli Bataille d’Eau", cost: 30 },
+				{ id: "dd_58", nm: "Glyphe Kavat Bataille d'Eau", cost: 250 },
+				{ id: "dd_59", nm: "Glyphe Kubrow Bataille d'Eau", cost: 250 },				
+				{ id: "dd_60", nm: "Glyphe Suplex Kubrow", cost: 30 },
+				{ id: "dd_61", nm: "Glyphe Surfer Sur La Vague", cost: 30 },
+
+				//  HONORIA
+				{ id: "dd_70", nm: "Honoria Sur Cette Plage d’Une Terre", cost: 300 },
+
+				//  SYANDANA / SUGATRA
+				{ id: "dd_75", nm: "Syandana Samia Towsun", cost: 350 },
+				{ id: "dd_76", nm: "Syandana Dax De I'Aube", cost: 180 },
+				{ id: "dd_76", nm: "Sugatra Dax De I'Aube", cost: 180 },
+
+				//  ARMES
+				{ id: "dd_80", nm: "Furax Wraith - Schéma", cost: 170 },
+				{ id: "dd_81", nm: "Furax Wraith - Gantelet Gauche", cost: 170 },
+				{ id: "dd_82", nm: "Furax Wraith - Gantelet Droit", cost: 170 },
+				
+				// AUTRES
+				{ id: "dd_85", nm: "Scène Du Relais d'Hydroid", cost: 200 },
+				{ id: "dd_86", nm: "Statuette Noggle - Hydoid Reprise", cost: 140 },
+				{ id: "dd_87", nm: "Statuette Noggle - Ember Reprise", cost: 140 },
+				{ id: "dd_88", nm: "Statuette Noggle - Yareli et Méruline", cost: 140 },
+
 			];
+			
 			// Event : Fléau Céleste (Celestial Flare) – tous les 2 ans environ
 			const EV_CD = [
 				{ id: "cd_0", nm: "Arcane Égide", cost: 500 },
