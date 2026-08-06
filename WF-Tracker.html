@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
 		<title>Warframe Tracker — D-Goth</title>
-		<meta name="version" content="6.7 — Ombres de Jade : Constellations" />
+		<meta name="version" content="6.8 — Ombres de Jade : Constellations -- DOG DAYS [En Cours]" />
 		<link rel="icon" type="image/x-icon" href="https://www.black-lab.fr/favicon.ico">	
 		<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet" />
 		<style>
@@ -1769,16 +1769,12 @@
 			}
 
 			function performUpdate(data) {
-				// 1. Sauvegarde les données courantes dans localStorage
+				// Sauvegarde des données
 				localStorage.setItem("pending_update_ini", exportIniToString());
 				localStorage.setItem("pending_version", data.version);
-				// 2. Si une URL de téléchargement est fournie dans version.json, y aller
-				//    Sinon, simple rechargement (utile si le HTML est remplacé à la volée)
-				if (data.url) {
-					window.location.href = data.url + "?t=" + Date.now();
-				} else {
-					window.location.reload(true);
-				}
+				// Simple rechargement de la page
+				// Sur GitHub Pages, cela servira la nouvelle version du HTML
+				window.location.reload(true);
 			}
 
 			// ── Restoration après mise à jour ────────────────────────────────────────
@@ -4297,6 +4293,12 @@
 					cond: "200 Nightmare Tatters (Op. Atramentum)",
 				},
 				{
+					cat: "Événements",
+					nm: "Sur Cette Plage d’Une Terre",
+					pos: "Suffixe",
+					cond: "300 Perles de Nakak (Dog Day 2026)",
+				},
+				{
 					cat: "Hunhow",
 					nm: "Tout En Unité",
 					pos: "Suffixe",
@@ -5680,7 +5682,7 @@
 				{ id: "dd_59", nm: "Glyphe Kubrow Bataille d'Eau", cost: 250 },				
 				{ id: "dd_60", nm: "Glyphe Suplex Kubrow", cost: 30 },
 				{ id: "dd_61", nm: "Glyphe Surfer Sur La Vague", cost: 30 },
-
+				
 				//  HONORIA
 				{ id: "dd_70", nm: "Honoria Sur Cette Plage d’Une Terre", cost: 300 },
 
