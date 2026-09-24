@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
 		<title>Warframe Tracker — D-Goth</title>
-		<meta name="version" content="6.8 — Ombres de Jade : Constellations -- DOG DAYS [En Cours]" />
+		<meta name="version" content="7.0 — La Lame de Givre de Narin" />
 		<link rel="icon" type="image/x-icon" href="https://www.black-lab.fr/favicon.ico">	
 		<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet" />
 		<style>
@@ -808,7 +808,7 @@
 			}
 			.bar-track {
 				flex: 1;
-				max-width: 250px
+				max-width: 250px;
 				background: var(--bg4);
 				height: 20px;
 				border-radius: 4px;
@@ -3194,6 +3194,71 @@
 						],
 					],
 				},
+				
+				// ── Arc 15 — ICE BLADE OF NARIN (Sept 2026) ─────────────────
+				{
+					id: "arc_lame_givre_narin",
+					label: "15 — La Lame de Givre de Narin (Sept 2026)",
+					col: "#05736b",
+					open: 1,
+					reserve: "Kuva Entropique",
+					sections: [
+						[
+							{
+								id: "narin",
+								nm: "NARIN LA LAME GIVRE & ARMES",
+								cl: "ke",
+								cu: "Kuva Entropiques (Céphalon Mélica - Pic de Yuvan - Terre)",
+								pts: [
+									{ n: "Narin BP",             c: 400 },
+									{ n: "Narin Châssis (Émer)", c: 130 },
+									{ n: "Narin Neuro (Émer)",   c: 130 },
+									{ n: "Narin Système (Émer)", c: 130 },
+									
+									{ n: "Nunchasa — Schéma",             c: 200 },
+									{ n: "Nunchasa — Partie Supérieure",  c: 45 },
+									{ n: "Nunchasa — Corde",              c: 45 },
+									{ n: "Nunchasa — Prise",              c: 90 },
+									{ n: "Aksondol — Schéma",             c: 200 },
+									{ n: "Aksondol — Lien",               c: 60 },
+									{ n: "Aksondol — Canon",              c: 30 , qty:2 },
+									{ n: "Aksondol — Culasse",            c: 30 , qty:2 },
+									
+								],
+							},
+							{
+								id: "cosmetiques_narin",
+								nm: "COSMÉTIQUES - LAME GIVRE DE NARIN",
+								cl: "ke",
+								cu: "Kuva Entropiques (Céphalon Mélica - Pic de Yuvan - Terre)",
+								pts: [
+									{ n: "Sceau Glacium",                          c: 250 },
+									{ n: "Honoria - Ailes de Glace",               c: 500 },
+									{ n: "Ephemera Seonang)",                      c: 500 },
+									{ n: "Prex Narin",                             c: 500 },
+									{ n: "Sumdali Niveus",                         c: 500 },
+									{ n: "Scène Pic de Yuvan",                     c: 500 },
+									{ n: "Scène Laboratoire de Melica",            c: 500 },
+									{ n: "Danse de Neote",                         c: 50 },
+									{ n: "Celle qui parle à la Glace",             c: 50 },
+									{ n: "Médaillon d'Epaule Tidon",               c: 80 },
+									{ n: "Médaillon de Poitrine Tidon",            c: 80 },
+									{ n: "Médaillon de Jambe Tidon",               c: 80 },
+									{ n: "Aspect Nepheri Niveus",                  c: 150 },
+									{ n: "Aspect Epees Versatiles Sombres Niveus", c: 150 },
+									{ n: "Aspect Dague Sombre Niveus",             c: 150 },
+									{ n: "Aspect Epee Sombre Niveus",              c: 150 },
+									{ n: "Aspect Paracesis Niveus",                c: 150 },
+									{ n: "Aspect Orvius Niveus",                   c: 150 },
+									{ n: "Aspect Glaxion Niveus",                  c: 150 },
+									{ n: "Aspect Quellor Niveus",                  c: 150 },
+									{ n: "Aspect Liset Niveus",                    c: 150 },
+									
+								],
+							},
+						],
+					],
+				},
 			];
 
 			function bFb(fb) {
@@ -3898,6 +3963,8 @@
 				"Mesa Prime",
 				"Mirage",
 				"Mirage Prime",
+				"Narin",
+				"Narin Prime",
 				"Nekros",
 				"Nekros Prime",
 				"Nezha",
@@ -5235,7 +5302,7 @@
 
 		<script id="mod-pa">
 
-		// PA initiaux (Voruna) — format canonique
+		// PA initiaux
 		const PA_INIT = [
 			{
 				id: "voruna_pa",
@@ -5303,29 +5370,42 @@
 					},
 				],
 			},
+			{
+				id: "citrine_pa",
+				nm: "CITRINE PRIME ACCESS",
+				date: "2026-09-23",
+				items: [
+					{
+						nm: "Citrine Prime",
+						parts: [
+							{ part: "Schéma Principal",  relic: "Meso C11",  tier: "T3" },
+							{ part: "Châssis",           relic: "Neo C11", tier: "T1" },
+							{ part: "Neuro",             relic: "Axi C12",  tier: "T3" },
+							{ part: "Système",           relic: "Lith S19",  tier: "T2" },
+						],
+					},
+					{
+						nm: "Corufell",
+						parts: [
+							{ part: "Schéma Principal",   relic: "Meso V17",  tier: "T1" },
+							{ part: "Crosse",             relic: "Lith C15",  tier: "T1" },
+							{ part: "Lame",               relic: "Neo C10",  tier: "T3" },
+							{ part: "Manche",            relic: "Axi C12",  tier: "T2" },
+						],
+					},
+					{
+						nm: "Steflos",
+						parts: [
+							{ part: "Schéma Principal", relic: "Neo Y2",  tier: "T2" },
+							{ part: "Crosse",           relic: "Meso D9",  tier: "T2" },
+							{ part: "Canon",            relic: "Axi S21",  tier: "T3" },
+							{ part: "Culasse",          relic: "Lith A13", tier: "T1" },
+						],
+					},
+				],
+			},
 		];
 
-		const RELIQ_MANQ = [
-			{ wf: "Ash",      parts: ["Système", "Neuro"] },
-			{ wf: "Atlas",    parts: ["Neuro"] },
-			{ wf: "Banshee",  parts: ["BP", "Système", "Châssis"] },
-			{ wf: "Caliban",  parts: ["Système"] },
-			{ wf: "Ember",    parts: ["BP", "Système"] },
-			{ wf: "Equinox",  parts: ["Système"] },
-			{ wf: "Frost",    parts: ["BP", "Neuro", "Système"] },
-			{ wf: "Gara",     parts: ["BP"] },
-			{ wf: "Gauss",    parts: ["Système"] },
-			{ wf: "Grendel",  parts: ["Système"] },
-			{ wf: "Harrow",   parts: ["Système"] },
-			{ wf: "Hydroid",  parts: ["Neuro", "Système"] },
-			{ wf: "Inaros",   parts: ["Système", "Neuro"] },
-			{ wf: "Ivara",    parts: ["BP"] },
-			{ wf: "Khora",    parts: ["BP"] },
-			{ wf: "Loki",     parts: ["BP", "Système"] },
-			{ wf: "Mesa",     parts: ["Neuro"] },
-			{ wf: "Mirage",   parts: ["BP"] },
-			{ wf: "Wisp",     parts: ["BP", "Neuro"] },
-		];
 
 		// ── Helpers ────────────────────────────────────────────────────────────
 		function getAllPAs() {
@@ -5359,7 +5439,7 @@
 		// ── Rendu principal ────────────────────────────────────────────────────
 		function rPA() {
 			const allPAs  = getAllPAs();
-			const currId  = g("pa_current", "styanax_pa");
+			const currId  = g("pa_current", "citrine_pa");
 			const currPA  = allPAs.find(pa => pa.id === currId) || allPAs[0];
 
 			// ── PA EN COURS ───────────────────────────────────────────────────
@@ -5406,19 +5486,7 @@
 				});
 			}
 			document.getElementById("pa-history").innerHTML = histH;
-
-			// ── RELIQUES MANQUANTES ───────────────────────────────────────────
-			const rh = RELIQ_MANQ.map(r =>
-				`<div class="reliq-item"><div class="ri-wf">${r.wf} Prime</div><div class="ri-p">${r.parts.join(" · ")}</div></div>`
-			).join("");
-			document.getElementById("reliq-body").innerHTML =
-				rh || '<div style="color:var(--green);font-size:11px;">Toutes les reliques obtenues !</div>';
-
-			// ── Formulaire d'ajout : prévisualiser les items en cours de saisie ─
-			renderAddPreview();
 		}
-
-		function setCurrPA(id) { s("pa_current", id); rPA(); }
 
 		// ── Formulaire d'ajout dynamique ───────────────────────────────────────
 		// Structure temporaire : tableau d'items en cours de saisie
