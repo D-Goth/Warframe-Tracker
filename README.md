@@ -23,7 +23,7 @@ Un outil web monopage (Single Page Application) léger, autonome et sans dépend
 Aucun serveur ou installation complexe n'est nécessaire.
 
 1. Téléchargez ou clonez le dépôt.
-2. Ouvrez le fichier `index.html` dans votre navigateur web habituel.
+2. Ouvrez le fichier `WF-Tracker.html` dans votre navigateur web habituel.
 3. Entrez vos données : celles-ci sont automatiquement sauvegardées localement.
 
 ## 💾 Sauvegarde et Mise à jour
@@ -59,7 +59,7 @@ A lightweight, standalone single-page web application (SPA) with zero server dep
 No installation or web server required.
 
 1. Download or clone this repository.
-2. Open `index.html` in any modern web browser.
+2. Open `WF-Tracker.html` in any modern web browser.
 3. Enter your data: progression is automatically saved to your browser.
 
 ## 💾 Backup and Updates
