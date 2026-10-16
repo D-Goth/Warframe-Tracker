@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
 		<title>Warframe Tracker — D-Goth</title>
-		<meta name="version" content="7.0 — La Lame de Givre de Narin" />
+		<meta name="version" content="7.1 — Epoch Operation" />
 		<link rel="icon" type="image/x-icon" href="https://www.black-lab.fr/favicon.ico">	
 		<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet" />
 		<style>
@@ -5484,7 +5484,7 @@
 								<span style="font-family:'Orbitron',monospace;font-size:12px;font-weight:700">${pa.nm}</span>
 								${pa.date ? `<span style="font-size:10px;color:var(--grey2);margin-left:8px">${pa.date}</span>` : ""}
 							</div>
-							<button class="btn" onclick="setCurrPA(${JSON.stringify(pa.id)})">▶ Définir comme courant</button>
+							<button class="btn" onclick="setCurrPA('${pa.id}')">▶ Définir comme courant</button>
 						</div>
 						<div class="g3">${items}</div>
 					</div>`;
@@ -5535,6 +5535,11 @@
 		function addPart(ii)        { _paItems[ii].parts.push({ part: "", relic: "", tier: "" }); renderAddPreview(); }
 		function removePart(ii, pi) { if (_paItems[ii].parts.length > 1) { _paItems[ii].parts.splice(pi, 1); renderAddPreview(); } }
 
+		function setCurrPA(id) {
+			s("pa_current", id);
+			rPA();
+		}
+
 		function addPA() {
 			const nm   = document.getElementById("apa-name").value.trim();
 			const date = document.getElementById("apa-date").value;
@@ -5571,6 +5576,57 @@
 </script>
 
 		<script id="mod-ev">
+		
+			const EV_EP = [
+				{ id: "ep_0", nm: "Grèves Contegorus", cost: 175 },
+				{ id: "ep_1", nm: "Epaulières Contegorus", cost: 175 },
+				{ id: "ep_2", nm: "Plastron Contegorus", cost: 175 },
+				{ id: "ep_3", nm: "Aspect d'Amplificateur Vacis", cost: 375 },
+				{ id: "ep_4", nm: "Glyphe Avatar Arturos", cost: 100 },
+				{ id: "ep_5", nm: "Glyphe Avatar Zioa", cost: 100 },
+				{ id: "ep_6", nm: "Glyphe Natah Néolyste", cost: 100 },
+				{ id: "ep_7", nm: "Peluche Natah Néolyste", cost: 125 },
+				{ id: "ep_8", nm: "Dévoreuse", cost: 125 },
+				{ id: "ep_9", nm: "Sumdali Khadati", cost: 250 },
+				{ id: "ep_10", nm: "Syandana Dhampyre", cost: 500 },
+				{ id: "ep_11", nm: "Sceau Vers Tau", cost: 100 },
+				{ id: "ep_12", nm: "Badge d'Avatar De L'Opération d'Epoque", cost: 100 },
+				{ id: "ep_13", nm: "Jambière Naktavyre", cost: 100 },
+				{ id: "ep_14", nm: "Epaulières Naktavyre", cost: 100 },
+				{ id: "ep_15", nm: "Plastron Naktavyre", cost: 100 },
+				{ id: "ep_16", nm: "Haalvu", cost: 150 },
+				{ id: "ep_17", nm: "Syandana de Valdur", cost: 175 },
+				{ id: "ep_18", nm: "Emblème Fronde", cost: 75 },
+				{ id: "ep_19", nm: "Badge Menace Aride", cost: 75 },
+				{ id: "ep_20", nm: "Badge De La Reproduction", cost: 75 },
+				{ id: "ep_21", nm: "Sceau De Faille", cost: 75 },
+				{ id: "ep_22", nm: "Spectra Vandal", cost: 150 },
+				{ id: "ep_23", nm: "Basmu (Schéma)", cost: 125 },
+				{ id: "ep_24", nm: "Aspect Cortège Supulchrax", cost: 125 },
+				{ id: "ep_25", nm: "Aspect Morgha Supulchrax", cost: 125 },
+				{ id: "ep_26", nm: "Signa Krios", cost: 100 },
+				{ id: "ep_27", nm: "La Salle de Bal Du Simulacre", cost: 125 },
+				{ id: "ep_28", nm: "Fragment d'Archonte Tauforgé Ecarlate", cost: 375 },
+				{ id: "ep_29", nm: "Fragment d'Archonte Tauforgé Azur", cost: 375 },
+				{ id: "ep_30", nm: "Fragment d'Archonte Tauforgé Ambre", cost: 375 },
+				{ id: "ep_31", nm: "Coeur Légendaire", cost: 500 },
+				{ id: "at_32", nm: "Sceau de Clan Déphasé", cost: 50 },
+				{ id: "at_33", nm: "Sceau de Clan Glyphé", cost: 50 },
+				{ id: "ep_34", nm: "Sceau de Clan Doré", cost: 50 },
+				{ id: "ep_35", nm: "Fortification de Mêlée", cost: 5,  arc: true },
+				{ id: "ep_36", nm: "Représailles de Mêlée", cost: 5,  arc: true  },
+				{ id: "ep_37", nm: "Arcane Batterie", cost: 8,  arc: true  },
+				{ id: "ep_38", nm: "Arcane Tempête de Glace", cost: 8,  arc: true  },
+				{ id: "ep_39", nm: "Affliction de Mêlée", cost: 8,  arc: true  },
+				{ id: "ep_40", nm: "Animosité En Mêlée", cost: 8,  arc: true  },
+				{ id: "ep_41", nm: "Exposition de Mêlée", cost: 8,  arc: true  },
+				{ id: "ep_42", nm: "Influence de Mêlée", cost: 8,  arc: true  },
+				{ id: "ep_43", nm: "Vortex de Mêlée", cost: 8,  arc: true  },
+				{ id: "ep_44", nm: "Fortifiant Secondaire", cost: 8,  arc: true  },
+				{ id: "ep_45", nm: "Surtension Secondaire", cost: 8,  arc: true  },
+				{ id: "ep_46", nm: "Honoria Le Destructeur de Lune", cost: 175 },
+			];
+		
 			const EV_AT = [
 				{ id: "at_0", nm: "Ephéméra Primatura" },
 				{ id: "at_1", nm: "Ephéméra Paraeidola" },
@@ -5610,7 +5666,7 @@
 			const EV_JADE = [
 				// ── Arcanes ×21 (arc:true = stepper) ──────────────────────────────────────
 				{ id: "jd_0",  nm: "Tempo",                  cost: 2,  arc: true },
-				{ id: "jd_1",  nm: "Conséquence",             cost: 2,  arc: true },
+				{ id: "jd_1",  nm: "Conséquence",            cost: 2,  arc: true },
 				{ id: "jd_2",  nm: "Elan",                   cost: 2,  arc: true },
 				{ id: "jd_3",  nm: "Glace",                  cost: 2,  arc: true },
 				{ id: "jd_4",  nm: "Zéro",                   cost: 2,  arc: true },
@@ -5779,12 +5835,12 @@
 			
 			// Event : Fléau Céleste (Celestial Flare) – tous les 2 ans environ
 			const EV_CD = [
-				{ id: "cd_0", nm: "Arcane Égide", cost: 500 },
-				{ id: "cd_1", nm: "Arcane Énergétique", cost: 500 },
-				{ id: "cd_2", nm: "Arcane Grâce", cost: 500 },
-				{ id: "cd_3", nm: "Arcane Barrière", cost: 500 },
-				{ id: "cd_4", nm: "Arcane Guérison", cost: 300 },
-				{ id: "cd_5", nm: "Arcane Ultimatum", cost: 300 },
+				{ id: "cd_0", nm: "Arcane Égide", cost: 500, arc: true },
+				{ id: "cd_1", nm: "Arcane Énergétique", cost: 500, arc: true },
+				{ id: "cd_2", nm: "Arcane Grâce", cost: 500, arc: true },
+				{ id: "cd_3", nm: "Arcane Barrière", cost: 500, arc: true },
+				{ id: "cd_4", nm: "Arcane Guérison", cost: 300, arc: true },
+				{ id: "cd_5", nm: "Arcane Ultimatum", cost: 300, arc: true },
 				{ id: "cd_6", nm: "Sigil Solstice", cost: 100 },
 				{ id: "cd_7", nm: "Sigil Équinoxe", cost: 100 },
 				{ id: "cd_8", nm: "Palette Couleur Solstice", cost: 200 },
@@ -5793,20 +5849,78 @@
 				{ id: "cd_11", nm: "Exilus Adapter", cost: 150 },
 			];
 
-			// Event : Naberus (Halloween)
+			// Event : Nights Of Naberus (Halloween)
 			const EV_NB = [
-				{ id: "nb_0", nm: "Mod Vol du Nabere", cost: 1500 },
-				{ id: "nb_1", nm: "Mod Frappe du Naberus", cost: 1500 },
-				{ id: "nb_2", nm: "Mod Cœur Saignant", cost: 1500 },
-				{ id: "nb_3", nm: "Mod Charge Spectrale", cost: 1500 },
-				{ id: "nb_4", nm: "Mod Déchiquetage", cost: 1500 },
-				{ id: "nb_5", nm: "Mod Lien du Naberus", cost: 1500 },
-				{ id: "nb_6", nm: "Pack de décorations Citrouilles", cost: 500 },
-				{ id: "nb_7", nm: "Pack de décorations Toile d'araignée", cost: 500 },
-				{ id: "nb_8", nm: "Glyphe Naberus", cost: 100 },
-				{ id: "nb_9", nm: "Sigil Naberus", cost: 100 },
-				{ id: "nb_10", nm: "Aspect Parazon (Halloween)", cost: 250 },
-				{ id: "nb_11", nm: "Palette Couleur Naberus", cost: 250 },
+				{ id: "nb_0", nm: "Naberus Ephemera", cost: 45 },
+				{ id: "nb_1", nm: "Gram Jour des Morts", cost: 90 },
+				{ id: "nb_2", nm: "Basmu Jour des Morts", cost: 90 },
+				{ id: "nb_3", nm: "Gammacor Jour des Morts", cost: 90 },
+				{ id: "nb_4", nm: "Ignis Jour des Morts", cost: 90 },
+				{ id: "nb_5", nm: "Basmu", cost: 125 },
+				{ id: "nb_6", nm: "Lacera Ceti", cost: 125 },
+				{ id: "nb_7", nm: "Lacera Mépris", cost: 90 },
+				{ id: "nb_8", nm: "Salle de Bal du Simulacre", cost: 55 },
+				{ id: "nb_9", nm: "Glyphe Naberus Oeil Contaminé ", cost: 5 },
+				{ id: "nb_10", nm: "Glyphe Naberus Décomposé", cost: 5 },
+				{ id: "nb_11", nm: "Glyphe Naberus Grapeskull", cost: 5 },
+				{ id: "nb_12", nm: "Palette Couleur Nuits de Naberus", cost: 125 },
+				{ id: "nb_13", nm: "Necramech Jour des Morts", cost: 100 },
+				{ id: "nb_14", nm: "Sigil Sourire de Naberus", cost: 5 },
+				{ id: "nb_15", nm: "Statue Noggle - Stalker", cost: 25 },
+				{ id: "nb_16", nm: "Mobile Volubile Naberus", cost: 100 },
+				{ id: "nb_17", nm: "Ephemera Spineret", cost: 150 },
+				{ id: "nb_18", nm: "Ephemera Nyctalus", cost: 200 },
+				{ id: "nb_19", nm: "Casque Revenant Vania", cost: 25 },
+				{ id: "nb_20", nm: "Sugatra Keratose", cost: 35 },
+				{ id: "nb_21", nm: "Glyphe - Revenant en Action", cost: 25 },
+				{ id: "nb_22", nm: "Décoration Intérieur Hanté", cost: 100 },
+				{ id: "nb_23", nm: "Statue - Jack O Naut", cost: 25 },
+				{ id: "nb_24", nm: "Sheev (Schéma)", cost: 125 },
+				{ id: "nb_25", nm: "Sheev Poignée", cost: 25 },
+				{ id: "nb_26", nm: "Sheev Lame", cost: 25 },
+				{ id: "nb_27", nm: "Sheev Garde", cost: 25 },
+				{ id: "nb_28", nm: "Glyphe Lua Night", cost: 20 },
+				{ id: "nb_29", nm: "Badge de Troupeau Effrayant", cost: 5 },
+				{ id: "nb_30", nm: "Badge deTamm Provocateur", cost: 5 },
+				{ id: "nb_31", nm: "Badge Kubrow de Chasse", cost: 5 },
+				{ id: "nb_32", nm: "Sceau Stalker Sombre", cost: 5 },
+				{ id: "nb_33", nm: "Décoration Flame D'Arlo", cost: 40 },
+				{ id: "nb_34", nm: "Statue Noggle - Homme dévoué", cost: 25 },
+				{ id: "nb_35", nm: "Statue Noggle - Femme Dévouée", cost: 25 },
+				{ id: "nb_36", nm: "Ignoble Décharge", cost: 50 },
+				{ id: "nb_37", nm: "Surtension Sentient", cost: 50 },
+				{ id: "nb_38", nm: "Badge Dagath", cost: 20 },
+				{ id: "nb_39", nm: "Glyph Sourire de Dagath", cost: 20 },
+				{ id: "nb_40", nm: "Glyph Dagath Accusatrice", cost: 20 },
+				{ id: "nb_41", nm: "Glyph Fille de Naberus", cost: 20 },
+				{ id: "nb_42", nm: "Glyph Harrow Invocation", cost: 20 },
+				{ id: "nb_43", nm: "Glyph Xaku Sortilège", cost: 20 },
+				{ id: "nb_44", nm: "Totem de la Chasse Sauvage", cost: 100 },
+				{ id: "nb_45", nm: "Apparence Griffes Euklar", cost: 125 },
+				{ id: "nb_46", nm: "Epaulières Saturne Six - Jour des Morts", cost: 45 },
+				{ id: "nb_47", nm: "Plastron Saturne Six - Jour des Morts", cost: 125 },
+				{ id: "nb_48", nm: "Jambières Saturne Six - Jour des Morts", cost: 100 },
+				{ id: "nb_49", nm: "Syandana Saturne Six - Jour des Morts", cost: 125 },
+				{ id: "nb_50", nm: "Aspect Ignis - Jour des Morts", cost: 125 },
+				{ id: "nb_51", nm: "Sceau Furtivité de Dynar", cost: 5 },
+				{ id: "nb_52", nm: "Glyphe Oraxia en Action", cost: 25 },
+				{ id: "nb_53", nm: "Affiche La Maîtresse de la Peur", cost: 25 },
+				{ id: "nb_54", nm: "Apparence Liset Calaverita", cost: 125 },
+				{ id: "nb_55", nm: "Glyphe Follie Coulrophobie", cost: 20 },
+				{ id: "nb_56", nm: "Glyphe Massacre de Voruna Prime", cost: 20 },
+				{ id: "nb_57", nm: "Affiche Sirius & Orion", cost: 25 },
+				{ id: "nb_58", nm: "Aspect Shedu - Jour des Morts", cost: 90 },
+				{ id: "nb_59", nm: "Aspect Okina - Jour des Morts", cost: 90 },
+				{ id: "nb_60", nm: "Aspect Atomos - Jour des Morts", cost: 90 },
+				{ id: "nb_61", nm: "Aspect Taxon - Jour des Morts", cost: 90 },
+				{ id: "nb_62", nm: "Aspect Skaut - Jour des Morts", cost: 90 },
+				{ id: "nb_63", nm: "Masque Kayota - Jour des Morts", cost: 100 },
+				{ id: "nb_64", nm: "Syandana Monarcierro - Jour des Morts", cost: 125 },
+				{ id: "nb_65", nm: "Masque de Sentinelle Calaverita", cost: 35 },
+				{ id: "nb_66", nm: "Queue de Sentinelle Calaverita", cost: 35 },
+				{ id: "nb_67", nm: "Ailes de Sentinelle Calaverita", cost: 35 },
+				{ id: "nb_68", nm: "Syandana Monarcierro - Jour des Morts", cost: 20 },
+				
 			];
 
 			// Event : Tennobaum (Noël)
@@ -5965,25 +6079,53 @@
 					+ jadeItemH;
 				html += evCollapse('jade', 'EVENT JADE', 'OMBRE DE JADE', '#88dd44', jadeOwned, jadeTotalItems, jadeBody);
 
-				// ── 3–6. SAISONNIERS ──────────────────────────────────────────────────
+				// ── 3–6. SAISONNIERS & TEMPORAIRES ──────────────────────────────────────────────────
 				[
+					{ id:'ep', title:'EPOCH OPERATION', sub:'Oct-Nov 26',     col:'#ff1654', cLabel:'Chair de Lune possédées',      cKey:'ev__ep_curr', unit:'Chair de Lune',   items:EV_EP, pfx:'ev__ep_'  },
 					{ id:'dd', title:'DOG DAYS',      sub:'été',            col:'#44ffff', cLabel:'Perles Nakak possédées',      cKey:'ev__dd_curr', unit:'perles',   items:EV_DD, pfx:'ev__dd_'  },
 					{ id:'cd', title:'FLÉAU CÉLESTE',  sub:'tous les ~2 ans',col:'#ffaa44', cLabel:'Points de Fléau possédés',    cKey:'ev__cd_curr', unit:'pts',      items:EV_CD, pfx:'ev__cd_'  },
-					{ id:'nb', title:'NABERUS',         sub:'Halloween',      col:'#ff8844', cLabel:'Bonbons Naberus possédés',    cKey:'ev__nb_curr', unit:'bonbons',  items:EV_NB, pfx:'ev__nb_'  },
+					{ id:'nb', title:'NUITS DE NABERUS', sub:'Halloween',      col:'#ff8844', cLabel:'Bonbons Naberus possédés',    cKey:'ev__nb_curr', unit:'bonbons',  items:EV_NB, pfx:'ev__nb_'  },
 					{ id:'tb', title:'TENNOBAUM',       sub:'Noël',           col:'#44ff88', cLabel:'Flocons possédés',            cKey:'ev__tb_curr', unit:'flocons',  items:EV_TB, pfx:'ev__tb_'  },
+					
 				].forEach(ev => {
 					const curr = +g(ev.cKey, 0);
 					let owned = 0, needed = 0, body = '';
 					ev.items.forEach(it => {
-						const k    = ev.pfx + it.id;
-						const done = !!+g(k, 0);
-						if (done) owned++; else needed += it.cost;
-						body += '<div class="ev-row">'
-							+ '<input type="checkbox" ' + (done?'checked':'') + ' onchange="s(\'' + k + '\',this.checked?1:0);rEv()">'
-							+ '<label style="color:' + (done?'var(--green)':'var(--white)') + '">' + it.nm + '</label>'
-							+ '<span class="ev-cost">' + it.cost + ' ' + ev.unit + '</span>'
-							+ '<span class="ev-need">' + (done?'✓':it.cost) + '</span>'
-							+ '</div>';
+						const k = ev.pfx + it.id;
+						if (it.arc) {
+							// Objet possédable en plusieurs exemplaires (arcanes, etc.) — stepper plafonné à 21
+							const have = Math.min(21, +g(k, 0));
+							const need = 21 - have;
+							const rem  = it.cost * need;
+							needed += rem;
+							if (have >= 21) owned++;
+							const col = have >= 21 ? 'var(--green)' : have > 0 ? 'var(--orange)' : 'var(--white)';
+							body += '<div class="ev-row" style="align-items:center;gap:6px">'
+								+ '<label style="flex:1;color:' + col + ';margin:0">' + it.nm
+									+ ' <span style="font-size:9px;color:var(--grey2)">×' + it.cost + ' ' + ev.unit + '/exemplaire</span>'
+								+ '</label>'
+								+ '<div class="num-wrap" style="flex-shrink:0">'
+									+ '<button class="num-btn" onclick="adjJadeArc(\'' + k + '\',-1)">−</button>'
+									+ '<input type="number" min="0" max="21" style="width:38px;text-align:center" value="' + have + '"'
+										+ ' onchange="s(\'' + k + '\',Math.min(21,Math.max(0,+this.value)));rEv()">'
+									+ '<span style="font-size:10px;color:var(--grey2);padding:0 2px">/21</span>'
+									+ '<button class="num-btn" onclick="adjJadeArc(\'' + k + '\',1)">+</button>'
+								+ '</div>'
+								+ '<span style="font-family:\'Orbitron\',monospace;font-size:10px;min-width:60px;text-align:right;color:'
+									+ (rem===0?'var(--green)':'var(--red)') + '">'
+									+ (rem===0?'✓':fmt(rem)+' '+ev.unit)
+								+ '</span>'
+								+ '</div>';
+						} else {
+							const done = !!+g(k, 0);
+							if (done) owned++; else needed += it.cost;
+							body += '<div class="ev-row">'
+								+ '<input type="checkbox" ' + (done?'checked':'') + ' onchange="s(\'' + k + '\',this.checked?1:0);rEv()">'
+								+ '<label style="color:' + (done?'var(--green)':'var(--white)') + '">' + it.nm + '</label>'
+								+ '<span class="ev-cost">' + it.cost + ' ' + ev.unit + '</span>'
+								+ '<span class="ev-need">' + (done?'✓':it.cost) + '</span>'
+								+ '</div>';
+						}
 					});
 					html += evCollapse(ev.id, ev.title, ev.sub, ev.col, owned, ev.items.length,
 						evCurrRow(ev.cLabel, ev.cKey, curr) + evSummary(needed, curr, ev.unit) + body
